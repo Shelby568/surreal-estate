@@ -1,3 +1,62 @@
+Surreal Estate
+
+Requirements
+Create a property search engine
+
+Testing Utilities
+Jest React Testing Library
+
+Packages
+Axios
+
+Instructions
+Clone this repo...
+
+Install Airbnb Style Guide
+npm i -D  eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+
+Add .eslintrc.json
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+   "rules": {
+    "no-underscore-dangle": [0],
+    "react/jsx-props-no-spreading": [0],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ]
+  }
+
+Install Prettier
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
