@@ -1,0 +1,9 @@
+navbar {
+    background-color: white;
+}
+
+navbar-links {
+    margin: 0;
+    padding: 50;
+    display: inline-block;
+}
