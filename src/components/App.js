@@ -8,7 +8,7 @@ import AddProperty from './AddProperty';
 function App() {
   return (
     <div className="App">
-      <h2 className="title">Surreal Estate</h2>
+      <h2 className="surreal">Surreal Estate</h2>
       <NavBar />
       <Switch>
         <Route exact path="/" component={Properties} />
