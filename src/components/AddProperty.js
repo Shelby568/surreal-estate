@@ -23,25 +23,35 @@ const AddProperty = () => {
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
 
+  const handleFieldChange = (event) => {
+    setFields({
+      ...fields,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const handleAddProperty = (event) => {
     event.preventDefault();
     setAlert({ message: '', isSuccess: false });
 
     axios
-      .post('http://localhost:4000/api/v1/PropertyListing', { fields })
+      .post('http://localhost:4000/api/v1/PropertyListing', fields)
       .then((response) => {
-        console.log(response);
-        console.log(response.data);
-        setAlert('Yay, your property was successfully added!', true);
+        console.log(fields, 'fields');
+        console.log(response, 'response');
+        console.log(response.data, 'data');
+        setAlert({
+          message: 'Yay, your property was successfully added!',
+          isSuccess: true,
+        });
       })
       .catch((error) => {
         console.log(error);
-        setAlert('Oops, something went wrong. Please try again later.', false);
+        setAlert({
+          message: 'Oops, something went wrong. Please try again later.',
+          isSuccess: false,
+        });
       });
-  };
-
-  const handleFieldChange = (event) => {
-    setFields({ ...fields, [event.target.name]: event.target.value });
   };
 
   return (
@@ -49,9 +59,11 @@ const AddProperty = () => {
       Add Property
       <form className="form" onSubmit={handleAddProperty}>
         <label htmlFor="title">
-          <input type="text" id="title" name="title" placeholder="Title" value={fields.title} onChange={handleFieldChange} />
+          Property Description
+          <input type="text" id="title-id" name="title" placeholder="e.g. Two Bed Townhouse" value={fields.title} onChange={handleFieldChange} />
         </label>
         <label htmlFor="type">
+          Type
           <select id="type-id" name="type" placeholder="Type" value={fields.type} onChange={handleFieldChange}>
             <option value="Flat">Flat</option>
             <option value="Detached">Detached</option>
@@ -63,17 +75,20 @@ const AddProperty = () => {
           </select>
         </label>
         <label htmlFor="bedrooms">
-          <input type="text" id="bedrooms-id" name="bedrooms" placeholder="No. of Bedrooms" value={fields.bedrooms} onChange={handleFieldChange} />
+          Bedrooms
+          <input type="number" id="bedrooms-id" name="bedrooms" placeholder="No." value={fields.bedrooms} onChange={handleFieldChange} />
         </label>
         <label htmlFor="bathrooms">
-          <input type="text" id="bathrooms-id" name="bathrooms" placeholder="No. of Bathrooms" value={fields.bathrooms} onChange={handleFieldChange} />
+          Bathrooms
+          <input type="number" id="bathrooms-id" name="bathrooms" placeholder="No." value={fields.bathrooms} onChange={handleFieldChange} />
         </label>
         <label htmlFor="price">
+          Price
           <input type="number" min="0.01" step="0.01" max="100000000" id="price-id" name="price" placeholder="£" value={fields.price} onChange={handleFieldChange} />
         </label>
         <label htmlFor="city">
+          City
           <select id="city-id" name="city" placeholder="Location" value={fields.city} onChange={handleFieldChange}>
-            <option value="">Please select a location</option>
             <option value="Manchester">Manchester</option>
             <option value="Leeds">Leeds</option>
             <option value="Sheffield">Sheffield</option>
@@ -81,6 +96,7 @@ const AddProperty = () => {
           </select>
         </label>
         <label htmlFor="email">
+          Email
           <input type="text" id="email-id" name="email" placeholder="email@email.com" value={fields.email} onChange={handleFieldChange} />
         </label>
         <input type="submit" value="Add" />

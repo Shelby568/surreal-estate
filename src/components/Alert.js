@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Alert = ({ message, success }) => (
-  <div className={`Alert alert-${success ? 'success' : 'error'}`}>
+  <div className={`Alert ${success ? 'success' : 'error'}`}>
     {message}
   </div>
 );

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Properties checks component renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="PropertyCard"
+  >
+    <div
+      class="title"
+      data-testid="title-id"
+    />
+    <div
+      class="type"
+      data-testid="type-id"
+    />
+    <div
+      class="bathrooms"
+      data-testid="bathrooms-id"
+    />
+    <div
+      class="bedrooms"
+      data-testid="bedrooms-id"
+    />
+    <div
+      class="price"
+      data-testid="price-id"
+    />
+    <div
+      class="city"
+      data-testid="city-id"
+    />
+    <div
+      class="email"
+      data-testid="email-id"
+    />
+  </div>
+</DocumentFragment>
+`;

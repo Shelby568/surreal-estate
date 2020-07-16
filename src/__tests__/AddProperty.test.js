@@ -4,14 +4,14 @@ import AddProperty from '../components/AddProperty';
 
 describe('AddProperty', () => {
   it('checks component renders correctly', () => {
-    const { getByPlaceholderText } = render(<AddProperty />);
+    const { getByLabelText } = render(<AddProperty />);
 
-    expect(getByPlaceholderText('Title')).toBeTruthy();
-    expect(getByPlaceholderText('Location')).toBeTruthy();
-    expect(getByPlaceholderText('Type')).toBeTruthy();
-    expect(getByPlaceholderText('No. of Bedrooms')).toBeTruthy();
-    expect(getByPlaceholderText('No. of Bathrooms')).toBeTruthy();
-    expect(getByPlaceholderText('£')).toBeTruthy();
-    expect(getByPlaceholderText('email@email.com')).toBeTruthy();
+    expect(getByLabelText('Property Description')).toBeTruthy();
+    expect(getByLabelText('Type')).toBeTruthy();
+    expect(getByLabelText('Bedrooms')).toBeTruthy();
+    expect(getByLabelText('Bathrooms')).toBeTruthy();
+    expect(getByLabelText('Price')).toBeTruthy();
+    expect(getByLabelText('City')).toBeTruthy();
+    expect(getByLabelText('Email')).toBeTruthy();
   });
 });
