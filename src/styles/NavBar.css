@@ -1,16 +1,75 @@
 .navbar {
-    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #000034;
+    color: white;
 }
 
-.navbar-links {
-    margin: 0;
-    padding: 0;
-    display: inline;
-    list-style-type: none;
+.title {
+    padding: 20px 5px;
+    font-size: 2.5rem;
+    right: 5px;
 }
 
-.logo {
-    position: relative;
-    top: -105px;
-    left: 25px;
+.bm-item {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: white;
+    transition: color 0.2s;
 }
+
+.logout {
+  background-color: #3b5998;
+  border: solid #3b5998;
+  color: white;
+  width: 250px;
+  height: 55px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.bm-item:hover {
+    color: #373a47;
+}
+
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    right: 36px;
+    top: 50px;
+  }
+  
+  .bm-burger-bars {
+    background: white;
+  }
+  
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bm-cross {
+    background: white;
+  }
+  
+  .bm-menu {
+    background: #000034;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  
+  .bm-morph-shape {
+    fill: #00005A;
+  }
+  
+  .bm-item-list {
+    color: #b8b7ad;
+  }
+  
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }

@@ -1,0 +1,25 @@
+.homepage {
+    background-image: url(../images/background.jpeg);
+    height: 79vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homepage-box {
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-text {
+    background-color: white;
+    border: 5px solid #000034;
+    border-radius: 7px;
+    padding: 10px;
+    width: 550px;
+    height: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000034;
+    text-align: center;
+}

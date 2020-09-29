@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/Properties.css';
+import propTypes from 'prop-types';
 import PropertyCard from './PropertyCard';
 import Alert from './Alert';
 import SideBar from './SideBar';
 
-const Properties = () => {
+const Properties = ({ userID }) => {
   const initialState = {
     properties: [],
     alert: {
@@ -29,39 +30,51 @@ const Properties = () => {
     axios
       .get('http://localhost:4000/api/v1/PropertyListing')
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data, 'properties');
         setProperties(response.data);
       })
       .catch((error) => {
         console.log(error);
         setAlert({
-          message: 'Oops, something went wrong. Please try again later.',
+          message: 'Server Error. Please try again later.',
         });
       });
   }, []);
 
+  const handleSaveProperty = (propertyId) => {
+    axios
+      .post('http://localhost:4000/api/v1/Favourite', {
+        propertyListing: propertyId,
+        fbUserId: userID,
+      });
+  };
+
   return (
     <div className="Properties">
-      {
-    properties.map((property) => (
-      <PropertyCard
-        key={property._id}
-        title={property.title}
-        type={property.type}
-        bathrooms={property.bathrooms}
-        bedrooms={property.bedrooms}
-        price={property.price}
-        city={property.city}
-        email={property.email}
-      />
-    ))
-}
-      {alert.message && (
+      <div className="alert">
+        {alert.message && (
         <Alert message={alert.message} success={alert.isSuccess} />
-      )}
-      <SideBar />
+        )}
+      </div>
+      <div className="propCard">
+        <SideBar />
+        {
+        properties.map((property) => (
+          <PropertyCard
+            key={property._id}
+            {...property}
+            userID={userID}
+            onSaveProperty={handleSaveProperty}
+          />
+        ))
+      }
+      </div>
     </div>
   );
+};
+
+Properties.propTypes = {
+  userID: propTypes.number.isRequired,
 };
 
 export default Properties;

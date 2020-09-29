@@ -1,19 +1,75 @@
-input, select {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-
 .Alert.error {
-    padding: 20px;
-    background-color: red;
+    padding: 15px;
+    background-color: #D93A32;
     color: white;
+    font-weight: bold;
     margin-bottom: 15px;
 }
 
 .Alert.success {
-    padding: 20px;
-    background-color: green;
+    padding: 15px;
+    background-color: #3ace3a;
     color: white;
     margin-bottom: 15px;
+}
+
+.addProperty {
+    background-image: url(../images/addaprop.jpg);
+    height: 79vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    text-align: center;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    color: #000034;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.add-input, select {
+    width: 75%;
+    height: 25px;
+    border: #000034;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3px;
+}
+
+.form {
+    border: #000034;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: white;
+    width: 500px;
+    display: inline-block;
+    margin: 50px;
+}
+
+.add-button-div {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.add-button {
+    width: 50%;
+    height: 35px;
+    background-color: #000034;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: solid;
+    border-radius: 6px;
+    transition: 0.4s;
+}
+
+.add-button:hover {
+    background-color: #00004e;
 }

@@ -1,0 +1,33 @@
+.propertyCard {
+   display: inline;
+   text-align: center;
+   padding: 15px; 
+   border-color: #000034;
+   border: solid;
+   border-radius: 6px;
+}
+
+.propCard {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   padding: 20px;
+}
+
+.picture, .bedroom {
+    color: #000034;
+}
+
+.email {
+   color: white;
+}
+
+.email-button, .save-button {
+   background-color: #000034;
+   color: white;
+   font-weight: bold;
+   height: 35px;
+   width: 100px;
+   border: solid;
+   border-radius: 6px;
+}

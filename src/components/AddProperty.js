@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/AddProperty.css';
 import axios from 'axios';
+import propTypes from 'prop-types';
 import Alert from './Alert';
 
 const AddProperty = () => {
@@ -55,14 +56,13 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="AddProperty">
-      Add Property
+    <div className="addProperty">
       <form className="form" onSubmit={handleAddProperty}>
-        <label htmlFor="title">
+        <label htmlFor="title" className="label">
           Property Description
-          <input type="text" id="title-id" name="title" placeholder="e.g. Two Bed Townhouse" value={fields.title} onChange={handleFieldChange} />
+          <input type="text" id="title-id" name="title" className="add-input" placeholder="e.g. Two Bed Townhouse" value={fields.title} onChange={handleFieldChange} />
         </label>
-        <label htmlFor="type">
+        <label htmlFor="type" className="label">
           Type
           <select id="type-id" name="type" placeholder="Type" value={fields.type} onChange={handleFieldChange}>
             <option value="Flat">Flat</option>
@@ -74,19 +74,19 @@ const AddProperty = () => {
             <option value="Bungalow">Bungalow</option>
           </select>
         </label>
-        <label htmlFor="bedrooms">
+        <label htmlFor="bedrooms" className="label">
           Bedrooms
-          <input type="number" id="bedrooms-id" name="bedrooms" placeholder="No." value={fields.bedrooms} onChange={handleFieldChange} />
+          <input type="string" id="bedrooms-id" name="bedrooms" className="add-input" placeholder="No." value={fields.bedrooms} onChange={handleFieldChange} />
         </label>
-        <label htmlFor="bathrooms">
+        <label htmlFor="bathrooms" className="label">
           Bathrooms
-          <input type="number" id="bathrooms-id" name="bathrooms" placeholder="No." value={fields.bathrooms} onChange={handleFieldChange} />
+          <input type="string" id="bathrooms-id" name="bathrooms" className="add-input" placeholder="No." value={fields.bathrooms} onChange={handleFieldChange} />
         </label>
-        <label htmlFor="price">
+        <label htmlFor="price" className="label">
           Price
-          <input type="number" min="0.01" step="0.01" max="100000000" id="price-id" name="price" placeholder="£" value={fields.price} onChange={handleFieldChange} />
+          <input type="number" min="0.01" step="0.01" id="price-id" name="price" className="add-input" placeholder="£" value={fields.price} onChange={handleFieldChange} />
         </label>
-        <label htmlFor="city">
+        <label htmlFor="city" className="label">
           City
           <select id="city-id" name="city" placeholder="Location" value={fields.city} onChange={handleFieldChange}>
             <option value="Manchester">Manchester</option>
@@ -95,17 +95,31 @@ const AddProperty = () => {
             <option value="Liverpool">Liverpool</option>
           </select>
         </label>
-        <label htmlFor="email">
+        <label htmlFor="email" className="label">
           Email
-          <input type="text" id="email-id" name="email" placeholder="email@email.com" value={fields.email} onChange={handleFieldChange} />
+          <input type="text" id="email-id" name="email" className="add-input" placeholder="email@email.com" value={fields.email} onChange={handleFieldChange} />
         </label>
-        <input type="submit" value="Add" />
+        <div className="add-button-div">
+          <button type="submit" className="add-button">
+            Add
+          </button>
+        </div>
         {alert.message && (
         <Alert message={alert.message} success={alert.isSuccess} />
         )}
       </form>
     </div>
   );
+};
+
+AddProperty.propTypes = {
+  title: propTypes.string.isRequired,
+  type: propTypes.string.isRequired,
+  bedrooms: propTypes.string.isRequired,
+  bathrooms: propTypes.string.isRequired,
+  price: propTypes.number.isRequired,
+  city: propTypes.string.isRequired,
+  email: propTypes.string.isRequired,
 };
 
 export default AddProperty;

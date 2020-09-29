@@ -1,0 +1,37 @@
+.sidebar {
+    max-width: 150px;
+}
+
+.input {
+    position: relative;
+    left: -25px;
+}
+
+.side-input {
+    width: 150px;
+    height: 27px;
+}
+
+.side-button {
+    width: 158px;
+    height: 30px;
+    border: solid #000034;
+    border-radius: 3px;
+    background-color: #000034;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.sidebar-links {
+    position: relative;
+    left: -65px;
+}
+
+.sidebar-link {
+    list-style-type: none;
+}
+
+.sidebar-title {
+    font-weight: bold;
+}
