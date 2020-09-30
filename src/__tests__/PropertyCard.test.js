@@ -5,6 +5,7 @@ import PropertyCard from '../components/PropertyCard';
 describe('Properties', () => {
   const properties = [
     {
+      _id: '123a',
       title: '2 Bed Townhouse',
       type: 'Semi-Detached',
       bathrooms: '1',
@@ -14,6 +15,7 @@ describe('Properties', () => {
       email: 'email1@email.com',
     },
     {
+      _id: '123b',
       title: 'Period Property',
       type: 'Detached',
       bathrooms: '2',
@@ -39,5 +41,5 @@ describe('Properties', () => {
     expect(getAllByTestId('price-id')).toHaveLength(1);
     expect(getAllByTestId('city-id')).toHaveLength(1);
     expect(getAllByTestId('email-id')).toHaveLength(1);
-})
+});
 });

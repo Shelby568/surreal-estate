@@ -20,7 +20,6 @@ const PropertyCard = ({
 }) => (
 
   <div className="propertyCard">
-    {title && (
       <div className="card">
         <div className="picture">
           <FontAwesomeIcon icon={faHome} size="4x" />
@@ -46,7 +45,7 @@ const PropertyCard = ({
           <button
             type="button"
             href={email}
-            className="email"
+            className="email-button"
           >
             <FontAwesomeIcon icon={faEnvelope} className="email" />
             {' '}
@@ -67,7 +66,6 @@ const PropertyCard = ({
         )}
       </div>
 
-    )}
   </div>
 );
 
@@ -81,7 +79,7 @@ PropertyCard.propTypes = {
   city: propTypes.string.isRequired,
   email: propTypes.string.isRequired,
   onSaveProperty: propTypes.func.isRequired,
-  userID: propTypes.number.isRequired,
+  userID: propTypes.string.isRequired,
 };
 
 export default PropertyCard;

@@ -74,7 +74,7 @@ const Properties = ({ userID }) => {
 };
 
 Properties.propTypes = {
-  userID: propTypes.number.isRequired,
+  userID: propTypes.string.isRequired,
 };
 
 export default Properties;
