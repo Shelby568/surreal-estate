@@ -21,14 +21,14 @@ const Properties = ({ userID }) => {
   const { search } = useLocation();
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+    axios.get(`mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/PropertyListing${search}`)
       .then(({ data }) => setProperties(data))
       .catch((err) => console.error(err));
   }, [search]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/api/v1/PropertyListing')
+      .get('mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/PropertyListing')
       .then((response) => {
         console.log(response.data, 'properties');
         setProperties(response.data);
@@ -43,7 +43,7 @@ const Properties = ({ userID }) => {
 
   const handleSaveProperty = (propertyId) => {
     axios
-      .post('http://localhost:4000/api/v1/Favourite', {
+      .post('mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/Favourite', {
         propertyListing: propertyId,
         fbUserId: userID,
       });

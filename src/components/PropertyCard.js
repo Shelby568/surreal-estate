@@ -20,39 +20,39 @@ const PropertyCard = ({
 }) => (
 
   <div className="propertyCard">
-      <div className="card">
-        <div className="picture">
-          <FontAwesomeIcon icon={faHome} size="4x" />
-        </div>
-        <div className="title" data-testid="title-id">{title}</div>
-        <div className="type" data-testid="type-id">{type}</div>
-        <div className="bathroom" data-testid="bathrooms-id">
-          <FontAwesomeIcon icon={faBath} />
+    <div className="card">
+      <div className="picture">
+        <FontAwesomeIcon icon={faHome} size="4x" />
+      </div>
+      <div className="title" data-testid="title-id">{title}</div>
+      <div className="type" data-testid="type-id">{type}</div>
+      <div className="bathroom" data-testid="bathrooms-id">
+        <FontAwesomeIcon icon={faBath} />
+        {' '}
+        {bathrooms}
+      </div>
+      <div className="bedroom" data-testid="bedrooms-id">
+        <FontAwesomeIcon icon={faBed} />
+        {' '}
+        {bedrooms}
+      </div>
+      <div className="price" data-testid="price-id">
+        £
+        {price}
+      </div>
+      <div className="city" data-testid="city-id">{city}</div>
+      <div className="email" data-testid="email-id">
+        <button
+          type="button"
+          href={email}
+          className="email-button"
+        >
+          <FontAwesomeIcon icon={faEnvelope} className="email" />
           {' '}
-          {bathrooms}
-        </div>
-        <div className="bedroom" data-testid="bedrooms-id">
-          <FontAwesomeIcon icon={faBed} />
-          {' '}
-          {bedrooms}
-        </div>
-        <div className="price" data-testid="price-id">
-          £
-          {price}
-        </div>
-        <div className="city" data-testid="city-id">{city}</div>
-        <div className="email" data-testid="email-id">
-          <button
-            type="button"
-            href={email}
-            className="email-button"
-          >
-            <FontAwesomeIcon icon={faEnvelope} className="email" />
-            {' '}
-            Email
-          </button>
-        </div>
-        {userID && (
+          Email
+        </button>
+      </div>
+      {userID && (
         <button
           type="button"
           href="#"
@@ -63,8 +63,8 @@ const PropertyCard = ({
           {' '}
           Save
         </button>
-        )}
-      </div>
+      )}
+    </div>
 
   </div>
 );
