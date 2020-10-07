@@ -18,7 +18,7 @@ const SavedProperties = ({ userID }) => {
   const [alert, setAlert] = useState(initialState.alert);
 
   useEffect(() => {
-    axios.get(`mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`)
+    axios.get(`https://mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`)
       .then((response) => {
         console.log(response.data, 'fave');
         console.log(userID, 'userid');
@@ -34,7 +34,7 @@ const SavedProperties = ({ userID }) => {
 
   const handleRemoveProperty = (favouriteId) => {
     axios
-      .delete(`mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/Favourite/${favouriteId}`)
+      .delete(`https://mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/Favourite/${favouriteId}`)
       .then((response) => {
         console.log(response);
         setAlert({
