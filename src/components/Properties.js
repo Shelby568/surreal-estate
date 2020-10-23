@@ -21,14 +21,14 @@ const Properties = ({ userID }) => {
   const { search } = useLocation();
 
   useEffect(() => {
-    axios.get(`https://mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/PropertyListing${search}`)
+    axios.get(`https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing${search}`)
       .then(({ data }) => setProperties(data))
       .catch((err) => console.error(err));
   }, [search]);
 
   useEffect(() => {
     axios
-      .get('https://mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/PropertyListing')
+      .get('https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing')
       .then((response) => {
         console.log(response.data, 'properties');
         setProperties(response.data);
@@ -43,7 +43,7 @@ const Properties = ({ userID }) => {
 
   const handleSaveProperty = (propertyId) => {
     axios
-      .post('https://mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListing?retryWrites=true&w=majority/Favourite', {
+      .post('https://serene-savannah-44704.herokuapp.com/api/v1/Favourite', {
         propertyListing: propertyId,
         fbUserId: userID,
       });

@@ -36,7 +36,7 @@ const AddProperty = () => {
     setAlert({ message: '', isSuccess: false });
 
     axios
-      .post('https://mongodb+srv://surreal-estate:SuRr34L-35t4T3@surreal-estate.t4yrj.mongodb.net/PropertyListingSchema?retryWrites=true&w=majority/PropertyListing', fields)
+      .post('https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing', fields)
       .then((response) => {
         console.log(fields, 'fields');
         console.log(response, 'response');
