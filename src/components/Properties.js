@@ -21,14 +21,14 @@ const Properties = ({ userID }) => {
   const { search } = useLocation();
 
   useEffect(() => {
-    axios.get(`api/v1/PropertyListing${search}`)
+    axios.get(`https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing${search}`)
       .then(({ data }) => setProperties(data))
       .catch((err) => console.error(err));
   }, [search]);
 
   useEffect(() => {
     axios
-      .get('api/v1/PropertyListing')
+      .get('https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing')
       .then((response) => {
         console.log(response.data, 'properties');
         setProperties(response.data);
@@ -43,7 +43,7 @@ const Properties = ({ userID }) => {
 
   const handleSaveProperty = (propertyId) => {
     axios
-      .post('api/v1/Favourite', {
+      .post('https://serene-savannah-44704.herokuapp.com/api/v1/Favourite', {
         propertyListing: propertyId,
         fbUserId: userID,
       });

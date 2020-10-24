@@ -36,7 +36,7 @@ const AddProperty = () => {
     setAlert({ message: '', isSuccess: false });
 
     axios
-      .post('api/v1/PropertyListing', fields)
+      .post('https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing', fields)
       .then((response) => {
         console.log(fields, 'fields');
         console.log(response, 'response');

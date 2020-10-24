@@ -18,7 +18,7 @@ const SavedProperties = ({ userID }) => {
   const [alert, setAlert] = useState(initialState.alert);
 
   useEffect(() => {
-    axios.get(`api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`)
+    axios.get(`https://serene-savannah-44704.herokuapp.com/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing`)
       .then((response) => {
         console.log(response.data, 'fave');
         console.log(userID, 'userid');
@@ -34,7 +34,7 @@ const SavedProperties = ({ userID }) => {
 
   const handleRemoveProperty = (favouriteId) => {
     axios
-      .delete(`api/v1/Favourite/${favouriteId}`)
+      .delete(`https://serene-savannah-44704.herokuapp.com/api/v1/Favourite/${favouriteId}`)
       .then((response) => {
         console.log(response);
         setAlert({
