@@ -19,7 +19,6 @@ const Properties = ({ userID }) => {
   const [properties, setProperties] = useState(initialState.properties);
   const [alert, setAlert] = useState(initialState.alert);
   const { search } = useLocation();
-  const headers = 
 
   useEffect(() => {
     axios.get(`https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing${search}`)
