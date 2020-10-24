@@ -23,9 +23,6 @@ const AddProperty = () => {
 
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
-   const headers = {
-    'Access-Control-Allow-Origin': '*'
-  };
 
   const handleFieldChange = (event) => {
     setFields({
@@ -39,7 +36,7 @@ const AddProperty = () => {
     setAlert({ message: '', isSuccess: false });
 
     axios
-      .post('https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing', fields, headers)
+      .post('https://serene-savannah-44704.herokuapp.com//api/v1/PropertyListing', fields)
       .then((response) => {
         console.log(fields, 'fields');
         console.log(response, 'response');

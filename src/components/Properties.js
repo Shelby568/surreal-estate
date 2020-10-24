@@ -19,19 +19,17 @@ const Properties = ({ userID }) => {
   const [properties, setProperties] = useState(initialState.properties);
   const [alert, setAlert] = useState(initialState.alert);
   const { search } = useLocation();
-  const headers = {
-    'Access-Control-Allow-Origin': '*'
-  };
+  const headers = 
 
   useEffect(() => {
-    axios.get(`https://serene-savannah-44704.herokuapp.com/api/v1/PropertyLisAccess-Control-Allow-Originting${search}`, headers)
+    axios.get(`https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing${search}`)
       .then(({ data }) => setProperties(data))
       .catch((err) => console.error(err));
   }, [search]);
 
   useEffect(() => {
     axios
-      .get('https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing', headers)
+      .get('https://serene-savannah-44704.herokuapp.com/api/v1/PropertyListing')
       .then((response) => {
         console.log(response.data, 'properties');
         setProperties(response.data);
@@ -49,7 +47,7 @@ const Properties = ({ userID }) => {
       .post('https://serene-savannah-44704.herokuapp.com/api/v1/Favourite', {
         propertyListing: propertyId,
         fbUserId: userID,
-      }, headers);
+      });
   };
 
   return (
