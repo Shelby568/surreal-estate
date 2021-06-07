@@ -1,16 +1,16 @@
 .navbar {
     background-color: white;
     color: #373a47;
-    box-shadow: 0.5px 1px #d3d3d3;
+    box-shadow: 0.5px 1.5px #d3d3d3;
     display: flex;
 }
 
 .logout {
   background-color: #3b5998;
   border: solid #3b5998;
-  color: #373a47;
-  width: 250px;
-  height: 55px;
+  color: white;
+  width: 150px;
+  height: 75px;
   font-size: 1rem;
   font-weight: bold;
 }

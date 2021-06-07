@@ -6,8 +6,8 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import propTypes from 'prop-types';
 import Modal from 'react-modal';
 import FacebookLogin from 'react-facebook-login';
-import Logo from './Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Logo from './Logo';
 
 library.add(fab);
 
