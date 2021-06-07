@@ -1,75 +1,51 @@
 .navbar {
+    background-color: white;
+    color: #373a47;
+    box-shadow: 0.5px 1px #d3d3d3;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 10px;
-    background-color: #000034;
-    color: white;
-}
-
-.title {
-    padding: 20px 5px;
-    font-size: 2.5rem;
-    right: 5px;
-}
-
-.bm-item {
-    display: inline-block;
-    text-decoration: none;
-    margin-bottom: 10px;
-    color: white;
-    transition: color 0.2s;
 }
 
 .logout {
   background-color: #3b5998;
   border: solid #3b5998;
-  color: white;
+  color: #373a47;
   width: 250px;
   height: 55px;
   font-size: 1rem;
   font-weight: bold;
 }
 
-.bm-item:hover {
-    color: #373a47;
+.navbar-links {
+  padding-top: 10px;
+  position: relative;
+  left: 950px;
+  top: 20px;
 }
 
-.bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    right: 36px;
-    top: 50px;
-  }
-  
-  .bm-burger-bars {
-    background: white;
-  }
-  
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-  
-  .bm-cross {
-    background: white;
-  }
-  
-  .bm-menu {
-    background: #000034;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-  }
-  
-  .bm-morph-shape {
-    fill: #00005A;
-  }
-  
-  .bm-item-list {
-    color: #b8b7ad;
-  }
-  
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
+
+li a, .login-button {
+  list-style-type: none;
+  text-decoration: none;
+  color: #373a47;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.login-button {
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.li-link {
+  display: inline-block;
+}
+
+li a:hover {
+  text-decoration: underline;
+  text-decoration-color: #373a47;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 10px;
+}

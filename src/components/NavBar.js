@@ -1,33 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/NavBar.css';
-import { Link } from 'react-router-dom';
-import FacebookLogin from 'react-facebook-login';
-import { slide as Menu } from 'react-burger-menu';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import propTypes from 'prop-types';
+import Modal from 'react-modal';
+import FacebookLogin from 'react-facebook-login';
+import Logo from './Logo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fab);
 
-const NavBar = ({ onLogin, userID, onLogout }) => (
+const NavBar = ({ onLogin, userID, onLogout }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
 
-  <div className="navbar">
-    <div className="logo-div">
-      <FontAwesomeIcon icon={['fab', 'fort-awesome']} size="5x" />
-    </div>
-    <div className="title-div">
-      <h2 className="title">
-        Surreal Estate
-      </h2>
-    </div>
-    <Menu isOpen={false} right>
-      <Link className="menu-item" to="/">Home</Link>
-      <Link className="menu-item" to="/view-properties">View Properties</Link>
-      <Link className="menu-item" to="/add-property">Add A Property</Link>
-      <Link className="menu-item" to="/saved-properties">Saved Properties</Link>
+  const customStyles = {
+    content: {
+      height: '9%',
+      width: '11%',
+      top: '20%',
+      left: '90%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      overflow: 'hidden',
+    },
+  };
 
-      <div className="login-button">
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="navbar">
+      <Logo />
+      <ul className="navbar-links">
+        <li className="li-link">
+          <a href="/">Home</a>
+        </li>
+        <li className="li-link">
+          <a href="/view-properties">View Properties</a>
+        </li>
+        <li className="li-link">
+          <a href="/add-property">Add Property</a>
+        </li>
+        <li className="li-link">
+          <a href="/saved-properties">Saved Properties</a>
+        </li>
+        <li className="li-link">
+          <button type="button" className="login-button" onClick={() => { openModal(); }}><FontAwesomeIcon icon={faUserCircle} /></button>
+        </li>
+      </ul>
+      <Modal
+        shouldCloseOnOverlayClick
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        ariaHideApp={false}
+      >
         {userID
           ? <button className="logout" type="button" onClick={onLogout}>LOG OUT</button>
           : (
@@ -38,10 +73,10 @@ const NavBar = ({ onLogin, userID, onLogout }) => (
               callback={onLogin}
             />
           )}
-      </div>
-    </Menu>
-  </div>
-);
+      </Modal>
+    </div>
+  );
+};
 
 NavBar.propTypes = {
   onLogin: propTypes.func.isRequired,

@@ -105,7 +105,7 @@ const AddProperty = () => {
           </button>
         </div>
         {alert.message && (
-        <Alert message={alert.message} success={alert.isSuccess} />
+          <Alert message={alert.message} success={alert.isSuccess} />
         )}
       </form>
     </div>

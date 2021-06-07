@@ -52,10 +52,10 @@ const SideBar = () => {
           </li>
           <div className="sidebar-title">Sort By Price</div>
           <li className="sidebar-link">
-            <Link className="link" to={buildQueryString('sort', { price: 1 })}>Price Ascending</Link>
+            <Link className="link" to={buildQueryString('sort', { price: 1 })}>Ascending</Link>
           </li>
           <li className="sidebar-link">
-            <Link className="link" to={buildQueryString('sort', { price: -1 })}>Price Descending</Link>
+            <Link className="link" to={buildQueryString('sort', { price: -1 })}>Descending</Link>
           </li>
         </ul>
       </form>

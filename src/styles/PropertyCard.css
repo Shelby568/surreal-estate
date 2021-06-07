@@ -2,9 +2,10 @@
    display: inline;
    text-align: center;
    padding: 15px; 
-   border-color: #000034;
+   border-color: #d3d3d3;
    border: solid;
    border-radius: 6px;
+   box-shadow: 3px 3px #d3d3d3;
 }
 
 .propCard {
@@ -15,7 +16,7 @@
 }
 
 .picture, .bedroom {
-    color: #000034;
+    color: #373a47;
 }
 
 .email {
@@ -23,7 +24,7 @@
 }
 
 .email-button, .save-button {
-   background-color: #000034;
+   background-color: #373a47;
    color: white;
    font-weight: bold;
    height: 35px;

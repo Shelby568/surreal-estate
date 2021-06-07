@@ -14,13 +14,14 @@
 }
 
 .addProperty {
-    background-image: url(../images/addaprop.jpg);
-    height: 79vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: block;
     text-align: center;
+    background-image: url('../images/home.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    top: 50px;
 }
 
 .label {
@@ -28,7 +29,7 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    color: #000034;
+    color: #373a47;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -36,14 +37,15 @@
 .add-input, select {
     width: 75%;
     height: 25px;
-    border: #000034;
+    border:#373a47;
     border-style: solid;
     border-width: thin;
     border-radius: 3px;
+    box-shadow: 3px 3px #d3d3d3;
 }
 
 .form {
-    border: #000034;
+    border: #d3d3d3;
     border-style: solid;
     border-radius: 5px;
     background-color: white;
@@ -61,7 +63,7 @@
 .add-button {
     width: 50%;
     height: 35px;
-    background-color: #000034;
+    background-color: #373a47;
     color: white;
     font-size: 1rem;
     font-weight: bold;
