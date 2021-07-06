@@ -24,7 +24,7 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      overflow: 'auto',
+      overflow: 'visible',
     },
   };
 
