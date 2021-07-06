@@ -51,7 +51,7 @@ li a:hover {
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 380px) {
   .navbar-links {
     position: absolute;
     left: -15px;
@@ -60,6 +60,6 @@ li a:hover {
 
   li a, .login-button {
     font-size: 0.75rem;
-    padding: 5px;
+    padding: 3px;
   }
 }
