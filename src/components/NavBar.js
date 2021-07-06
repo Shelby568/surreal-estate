@@ -19,12 +19,12 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
       height: '9%',
       width: '11%',
       top: '20%',
-      left: '90%',
+      left: '50%',
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      overflow: 'hidden',
+      overflow: 'auto',
     },
   };
 
@@ -56,24 +56,26 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
           <button type="button" className="login-button" onClick={() => { openModal(); }}><FontAwesomeIcon icon={faUserCircle} /></button>
         </li>
       </ul>
-      <Modal
-        shouldCloseOnOverlayClick
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        ariaHideApp={false}
-      >
-        {userID
-          ? <button className="logout" type="button" onClick={onLogout}>LOG OUT</button>
-          : (
-            <FacebookLogin
-              appId="2922267847882493"
-              autoLoad={false}
-              fields="name,email,picture"
-              callback={onLogin}
-            />
-          )}
-      </Modal>
+      <div className="login-modal">
+        <Modal
+          shouldCloseOnOverlayClick
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          ariaHideApp={false}
+        >
+          {userID
+            ? <button className="logout" type="button" onClick={onLogout}>LOG OUT</button>
+            : (
+              <FacebookLogin
+                appId="2922267847882493"
+                autoLoad={false}
+                fields="name,email,picture"
+                callback={onLogin}
+              />
+            )}
+        </Modal>
+      </div>
     </div>
   );
 };

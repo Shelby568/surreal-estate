@@ -1,6 +1,13 @@
+.homepage {
+    width: 50%;
+    height: 715px;
+    overflow: hidden;
+}
+
 .homepage-box {
-    display: flex;
-    justify-content: center;
+    height: 715px;
+    position: absolute;
+    left: 33.33%;
 }
 
 .homepage-text {
@@ -11,9 +18,27 @@
 }
 
 img {
-    width: 1050px;
-    height: 715px;
+    max-width: 100%;
+    height: 45em;
+    width: 50em;
     position: absolute;
-    top: 200px;
+    top: 12%;
     border-radius: 15px;
+    display: block;
+}
+
+@media only screen and (max-width: 400px) {
+     img  {
+        right: 4em;
+        height: 20em;
+        margin-top: 20px;
+    }
+    p {
+        position: relative;
+        right: 6em;
+        margin-top: 65px;
+    }
+    .homepage-text {
+        font-size: 10px;
+    }
 }

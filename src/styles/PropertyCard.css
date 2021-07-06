@@ -6,6 +6,10 @@
    border: solid;
    border-radius: 6px;
    box-shadow: 3px 3px #d3d3d3;
+   margin-top: 5px;
+   min-width: 325px;
+   max-width: 325px;
+   max-height: 400px;
 }
 
 .propCard {
@@ -15,7 +19,7 @@
    padding: 20px;
 }
 
-.picture, .bedroom {
+.picture, .bedroom, .bathroom {
     color: #373a47;
 }
 
@@ -32,4 +36,10 @@
    border: solid;
    border-radius: 6px;
    cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+   .propertyCard {
+      margin-top: 25px;
+   }
 }

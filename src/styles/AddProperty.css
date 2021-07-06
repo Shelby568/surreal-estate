@@ -75,3 +75,15 @@
 .add-button:hover {
     background-color: #00004e;
 }
+
+
+@media only screen and (max-width: 400px) {
+    .form {
+        width: 300px;
+        margin: 20px;
+    }
+
+    .addProperty {
+        background-image: none;
+    }
+}

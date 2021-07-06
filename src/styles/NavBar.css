@@ -49,3 +49,17 @@ li a:hover {
   text-decoration-thickness: 5px;
   text-underline-offset: 10px;
 }
+
+
+@media only screen and (max-width: 400px) {
+  .navbar-links {
+    position: absolute;
+    left: -15px;
+    top: 65px;
+  }
+
+  li a, .login-button {
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+}

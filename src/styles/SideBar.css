@@ -38,3 +38,9 @@
 .sidebar-title {
     font-weight: bold;
 }
+
+@media only screen and (max-width: 400px) {
+    .sidebar {
+        display: none;
+    }
+}
