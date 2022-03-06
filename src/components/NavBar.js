@@ -44,13 +44,13 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
           <a href="/">Home</a>
         </li>
         <li className="li-link">
-          <a href="/view-properties">View Properties</a>
+          <a href="/view-properties">View</a>
         </li>
         <li className="li-link">
-          <a href="/add-property">Add Property</a>
+          <a href="/add-property">Add</a>
         </li>
         <li className="li-link">
-          <a href="/saved-properties">Saved Properties</a>
+          <a href="/saved-properties">Saved</a>
         </li>
         <li className="li-link">
           <button type="button" className="login-button" onClick={() => { openModal(); }}><FontAwesomeIcon icon={faUserCircle} /></button>
