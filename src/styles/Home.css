@@ -48,6 +48,10 @@
     left: 20%;
 }
 
+.home-h2 {
+    font-size: 1.5rem;
+}
+
 .add-link-button {
     height: 40px;
     width: 150px;
@@ -80,6 +84,7 @@
     .homepage-text {
         font-size: 15px;
         right: 115px;
+        margin-top: 10px;
     }
 
     .view-button {
