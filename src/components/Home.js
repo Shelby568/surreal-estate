@@ -8,7 +8,7 @@ const Home = () => (
   <div className="homepage">
     <div className="homepage-box">
       <p className="homepage-text">Search properties for sale in the UK</p>
-      <Link to="/view-properties"><button type="button" className="view-button">Search</button></Link>
+      <Link className="view-link" to="/view-properties"><button type="button" className="view-button">Search</button></Link>
       <img className="homeImg" src={homeImg} alt="house" />
     </div>
     <div className="homepage-secondbox">
